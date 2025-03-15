@@ -232,7 +232,7 @@ double discountedPrice = product.price - (product.price * product.discount / 100
                             onPressed: () {
                               // منطق الشراء الآن
                               Provider.of<CartProvider>(context, listen: false)
-                                  .addProduct(product);
+                                  .addProduct(product,selectedSize: _selectedSize);
                               Navigator.pushNamed(context, '/checkout');
                             },
                           ),
@@ -251,7 +251,7 @@ double discountedPrice = product.price - (product.price * product.discount / 100
                             child: const Text('أضف للسلة'),
                             onPressed: () {
                               Provider.of<CartProvider>(context, listen: false)
-                                  .addProduct(product);
+                                  .addProduct(product,selectedSize: _selectedSize);
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(content: Text('تمت إضافة المنتج إلى السلة')),
                               );

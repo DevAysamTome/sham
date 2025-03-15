@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "957710516702",
+    "firebase_url": "https://technocore-75dfc-default-rtdb.firebaseio.com",
+    "project_id": "technocore-75dfc",
+    "storage_bucket": "technocore-75dfc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957710516702:android:da4db3ff2eb54643419d4f",
+        "android_client_info": {
+          "package_name": "com.example.technocore_template_v1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1fkcObCFqyFNzUoYRh2UdVPyQJfJNb8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957710516702:android:9ed49bbc93f395c7419d4f",
+        "android_client_info": {
+          "package_name": "com.technocore.shamadminapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1fkcObCFqyFNzUoYRh2UdVPyQJfJNb8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957710516702:android:55fed96479173842419d4f",
+        "android_client_info": {
+          "package_name": "com.technocore.shamapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1fkcObCFqyFNzUoYRh2UdVPyQJfJNb8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

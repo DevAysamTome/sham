@@ -88,6 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   !isSearch
                       ? Column(
                           children: [
+                            SizedBox(height: 30,),
                             _buildCategorySection(categoriesProvider),
                             PromoSlider(images: promoImages),
                             Padding(
@@ -121,6 +122,37 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 10,
                             ),
                             _buildFeaturedSection(productsProvider),
+                             SizedBox(
+                              height: 10,
+                            ),
+                            Padding(
+                               padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 8),
+                              child: Row(
+                                  children: [
+                                    const Text(
+                                      'عروض وخصومات',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const Spacer(),
+                                    TextButton(
+                                      onPressed: () {
+                                        // الانتقال إلى شاشة أخرى لعرض الكل
+                                        Navigator.pushNamed(
+                                            context, '/explore-screen');
+                                      },
+                                      child: Text(
+                                        'عرض الكل',
+                                        style:
+                                            TextStyle(color: Colors.deepOrange),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                            ),
+                            _buildDiscountSection(productsProvider)
                           ],
                         )
                       : Padding(
@@ -275,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
       centerTitle: false,
 
       bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
+        preferredSize: const Size.fromHeight(40),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Row(
@@ -384,4 +416,37 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+  Widget _buildDiscountSection(ProductsProvider productsProvider) {
+  if (productsProvider.isLoading) {
+    return const Center(child: CircularProgressIndicator());
+  }
+  // جلب جميع المنتجات
+  final allProducts = productsProvider.products;
+  // تصفية المنتجات التي لديها خصم
+  final discountProducts = allProducts.where((p) => p.discount > 0).toList();
+
+  if (discountProducts.isEmpty) {
+    return const Center(child: Text('لا يوجد منتجات عليها خصم حالياً.'));
+  }
+
+  return Container(
+    height: 360,
+    padding: const EdgeInsets.symmetric(horizontal: 8),
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: discountProducts.length,
+      itemBuilder: (ctx, index) {
+        final product = discountProducts[index];
+        return Container(
+          width: 220,
+          margin: const EdgeInsets.only(right: 8),
+          child: ProductCardWithButtons(
+            product: product,
+          ),
+        );
+      },
+    ),
+  );
+}
+
 }

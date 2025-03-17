@@ -43,7 +43,7 @@ final List<String> images;
       name: data['name'] ?? 'No Name',
       price: (data['price'] ?? 0.0).toDouble(),
       description: data['description'] ?? '',
-      imageUrl: data['imageUrl'] ?? 'https://via.placeholder.com/150',
+      imageUrl: data['imageURL'] ?? 'https://via.placeholder.com/150',
       oldPrice: (data['oldPrice'] ?? 0.0).toDouble(),
       category: data['categoryId'] ?? '',
       sizes: fetchedSizes,

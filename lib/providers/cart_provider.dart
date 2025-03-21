@@ -32,7 +32,7 @@ class CartProvider with ChangeNotifier {
       price: discountedPrice,
       imageUrl: product.imageUrl,
       // استخدم الحجم المختار إن وُجد، وإلا اختر أول حجم
-      size: selectedSize ?? (product.sizes.isNotEmpty ? product.sizes.first : null),
+size: selectedSize ?? (product.sizes.isNotEmpty ? product.sizes.first.name : null),
     );
     _items.add(newItem);
   }

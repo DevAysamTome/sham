@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:technocore_template_v1/core/scroll_behavior.dart';
 import 'package:technocore_template_v1/firebase_options.dart';
+import 'package:technocore_template_v1/providers/brands_provider.dart';
 import 'package:technocore_template_v1/providers/categories_provider.dart';
 import 'package:technocore_template_v1/providers/favorites_provider.dart';
 import 'package:technocore_template_v1/routes.dart';
@@ -32,11 +33,13 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => OrdersProvider()),
         ChangeNotifierProvider(create: (_) => CategoriesProvider()..fetchCategories()),
         ChangeNotifierProvider(create: (_) => FavoritesProvider()),
+                ChangeNotifierProvider(create: (_) => BrandsProvider()..fetchBrands()),
+
 
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Sham',
+        title: 'SHAM',
         theme: AppTheme.lightTheme,
         scrollBehavior: MyCustomScrollBehavior(),
         initialRoute: '/',

@@ -41,48 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBEeCCyKp6F0B0Go8-mgQGhNS7bcrnV2uo',
-    appId: '1:957710516702:web:9137d0f18122a9a8419d4f',
-    messagingSenderId: '957710516702',
-    projectId: 'technocore-75dfc',
-    authDomain: 'technocore-75dfc.firebaseapp.com',
-    storageBucket: 'technocore-75dfc.firebasestorage.app',
-    measurementId: 'G-MS8HHBZMZ5',
+    apiKey: 'AIzaSyDENlLOEDk_aphqYYn1Nw9EKkxXZu9rOrA',
+    appId: '1:209544392405:web:7da7cba450bed90fd9bc5c',
+    messagingSenderId: '209544392405',
+    projectId: 'smileapp-c6b27',
+    authDomain: 'smileapp-c6b27.firebaseapp.com',
+    storageBucket: 'smileapp-c6b27.firebasestorage.app',
+    measurementId: 'G-V6T1YW19VS',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB1fkcObCFqyFNzUoYRh2UdVPyQJfJNb8E',
-    appId: '1:957710516702:android:da4db3ff2eb54643419d4f',
-    messagingSenderId: '957710516702',
-    projectId: 'technocore-75dfc',
-    storageBucket: 'technocore-75dfc.firebasestorage.app',
+    apiKey: 'AIzaSyBywWsFQyc8fJmFJcDpYyKFO8ZqXe-NweE',
+    appId: '1:209544392405:android:fddcc950b5c1dbfad9bc5c',
+    messagingSenderId: '209544392405',
+    projectId: 'smileapp-c6b27',
+    storageBucket: 'smileapp-c6b27.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD0I8_OA6zzhqMD-SjOP0av9jQfzeQiRtI',
-    appId: '1:957710516702:ios:0463d5445ab1662f419d4f',
-    messagingSenderId: '957710516702',
-    projectId: 'technocore-75dfc',
-    storageBucket: 'technocore-75dfc.firebasestorage.app',
-    iosBundleId: 'com.technocore.shamapp',
+    apiKey: 'AIzaSyCIguF_BhlFE5Habt9kGKxidpw8RwpwNKI',
+    appId: '1:209544392405:ios:f71a5c8b0d198ef4d9bc5c',
+    messagingSenderId: '209544392405',
+    projectId: 'smileapp-c6b27',
+    storageBucket: 'smileapp-c6b27.firebasestorage.app',
+    iosBundleId: 'com.example.smileapp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD0I8_OA6zzhqMD-SjOP0av9jQfzeQiRtI',
-    appId: '1:957710516702:ios:0463d5445ab1662f419d4f',
-    messagingSenderId: '957710516702',
-    projectId: 'technocore-75dfc',
-    storageBucket: 'technocore-75dfc.firebasestorage.app',
-    iosBundleId: 'com.technocore.shamapp',
+    apiKey: 'AIzaSyCIguF_BhlFE5Habt9kGKxidpw8RwpwNKI',
+    appId: '1:209544392405:ios:f71a5c8b0d198ef4d9bc5c',
+    messagingSenderId: '209544392405',
+    projectId: 'smileapp-c6b27',
+    storageBucket: 'smileapp-c6b27.firebasestorage.app',
+    iosBundleId: 'com.example.smileapp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBEeCCyKp6F0B0Go8-mgQGhNS7bcrnV2uo',
-    appId: '1:957710516702:web:173c5e31d48612cd419d4f',
-    messagingSenderId: '957710516702',
-    projectId: 'technocore-75dfc',
-    authDomain: 'technocore-75dfc.firebaseapp.com',
-    storageBucket: 'technocore-75dfc.firebasestorage.app',
-    measurementId: 'G-W2LRP4H7DP',
+    apiKey: 'AIzaSyDENlLOEDk_aphqYYn1Nw9EKkxXZu9rOrA',
+    appId: '1:209544392405:web:9feb4b3a1a1557d0d9bc5c',
+    messagingSenderId: '209544392405',
+    projectId: 'smileapp-c6b27',
+    authDomain: 'smileapp-c6b27.firebaseapp.com',
+    storageBucket: 'smileapp-c6b27.firebasestorage.app',
+    measurementId: 'G-0Y9J1J0X8K',
   );
+
 }

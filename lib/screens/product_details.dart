@@ -17,23 +17,23 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   int _currentImageIndex = 0; // لمراقبة المؤشر في السلايدر
-  String? _selectedSize;      // الحجم المختار
+  SizeOption? _selectedSize;      // الحجم المختار
 
   @override
   void initState() {
     super.initState();
 
     // إذا كان المنتج يحتوي على أحجام في product.sizes، اختر أول حجم بشكل افتراضي
-    if (widget.product.sizes != null && widget.product.sizes!.isNotEmpty) {
-      _selectedSize = widget.product.sizes!.first;
-    }
+if (widget.product.sizes.isNotEmpty) {
+  _selectedSize = widget.product.sizes.first;
+}
   }
 
   @override
   Widget build(BuildContext context) {
     final cartProvider = Provider.of<CartProvider>(context, listen: false);
     final product = widget.product;
-
+final basePrice = _selectedSize?.price ?? product.price;
     // جلب الصور من product.images إذا وجدت، وإلا استخدم صورة واحدة product.imageUrl
     final List<String> images =
         (product.images != null && product.images!.isNotEmpty)
@@ -46,8 +46,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         (product.oldPrice != null
             ? ((product.oldPrice! - product.price) / product.oldPrice!) * 100
             : 0);
-double discountedPrice = product.price - (product.price * product.discount / 100);
-
+final discountedPrice = basePrice - (basePrice * product.discount / 100);
     // إذا كان هناك oldPrice
     final double? oldPrice = product.price;
 
@@ -72,7 +71,9 @@ double discountedPrice = product.price - (product.price * product.discount / 100
                     .addToFavorites(product);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('تمت إضافة المنتج إلى المفضلة')),
+                  
                 );
+                print(product.price);
               },
             ),
             IconButton(
@@ -232,7 +233,7 @@ double discountedPrice = product.price - (product.price * product.discount / 100
                             onPressed: () {
                               // منطق الشراء الآن
                               Provider.of<CartProvider>(context, listen: false)
-                                  .addProduct(product,selectedSize: _selectedSize);
+                                  .addProduct(product);
                               Navigator.pushNamed(context, '/checkout');
                             },
                           ),
@@ -251,7 +252,7 @@ double discountedPrice = product.price - (product.price * product.discount / 100
                             child: const Text('أضف للسلة'),
                             onPressed: () {
                               Provider.of<CartProvider>(context, listen: false)
-                                  .addProduct(product,selectedSize: _selectedSize);
+                                  .addProduct(product);
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(content: Text('تمت إضافة المنتج إلى السلة')),
                               );
@@ -291,7 +292,7 @@ double discountedPrice = product.price - (product.price * product.discount / 100
   }
 
   /// ويدجت بناء زر الحجم
-  Widget _buildSizeOption(String size) {
+  Widget _buildSizeOption(SizeOption size) {
     final isSelected = _selectedSize == size;
     return GestureDetector(
       onTap: () {
@@ -306,7 +307,7 @@ double discountedPrice = product.price - (product.price * product.discount / 100
           borderRadius: BorderRadius.circular(20),
         ),
         child: Text(
-          size, // أو 'بوصة $size' إذا كان الحجم يمثل بوصات
+          size.name, // أو 'بوصة $size' إذا كان الحجم يمثل بوصات
           style: TextStyle(color: isSelected ? Colors.white : Colors.black),
         ),
       ),

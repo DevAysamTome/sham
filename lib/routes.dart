@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:technocore_template_v1/app.dart';
 import 'package:technocore_template_v1/data/models/product.dart';
 import 'package:technocore_template_v1/screens/categories_screen_main.dart';
-import 'package:technocore_template_v1/screens/explore_screen.dart';
 import 'package:technocore_template_v1/screens/favorites_screen.dart';
 import 'package:technocore_template_v1/screens/product_details.dart';
 import 'package:technocore_template_v1/screens/splash_screen.dart';
+import 'package:technocore_template_v1/screens/explore_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/categories_screen.dart';
 import 'screens/cart_screen.dart';
 import 'screens/checkout_screen.dart';
 import 'screens/order_success.dart';
 
 final Map<String, WidgetBuilder> appRoutes = {
+  '/': (context) => SplashScreen(),
+  '/home': (context) => HomeScreen(),
 
-    '/': (context) => SplashScreen(),
-        '/home': (context) => HomeScreen(),
-
-'/favorites': (context) => FavoritesScreen(),
+  '/favorites': (context) => FavoritesScreen(),
 
   '/categories': (context) => CategoriesScreen(),
   '/cart': (context) => CartScreen(),

@@ -23,21 +23,21 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // يمكنك اختيار لون خلفية يناسب هوية تطبيقك
-      backgroundColor: Colors.deepOrangeAccent.shade200,
+      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // شعار التطبيق
             Image.asset(
-              'assets/sham_logo.png', // ضع مسار الشعار هنا
+              'assets/smile_logo.jpeg', // ضع مسار الشعار هنا
               width: 120,                   // يمكنك تعديل الحجم
               height: 120,
             ),
             const SizedBox(height: 16),
             // نص اختياري تحت الشعار (اسم التطبيق أو عبارة ترحيبية)
             const Text(
-              'شام للأدوات المنزلية',
+              'Smile Cosmatics',
               style: TextStyle(
                 fontSize: 24,
                 color: Colors.white,

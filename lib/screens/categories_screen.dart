@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../data/models/category.dart';
 import '../data/models/product.dart';
-import '../screens/product_details.dart'; // إن أردت شاشة تفاصيل المنتج
+import 'product_details.dart'; // إن أردت شاشة تفاصيل المنتج
 
 class CategoryProductsScreen extends StatefulWidget {
   final Category category;
@@ -24,39 +24,54 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
   }
 
   Future<void> _fetchCategoryProducts() async {
-    try {
-      final snap = await FirebaseFirestore.instance
-          .collection('products')
-          .where('categoryId', isEqualTo: widget.category.id)
-          .get();
+  try {
+    final snap = await FirebaseFirestore.instance
+        .collection('products')
+        .where('categoryId', isEqualTo: widget.category.id)
+        .get();
 
-      final fetchedProducts = snap.docs.map((doc) {
-        final data = doc.data();
-        return Product(
-          id: doc.id,
-          name: data['name'] ?? '',
-          price: (data['price'] ?? 0.0).toDouble(),
-          discount: (data['discount'] ?? 0.0).toDouble(),
-          sizes: data['sizes'] == null ? [] : List<String>.from(data['sizes']),
-          imageUrl: data['imageURL'] ?? '',
-          category: data['categoryId'] ?? '',
-          description: data['description'] ?? '',
-          images: data['images'] == null ? [] : List<String>.from(data['images']),
-          oldPrice: (data['oldPrice'] ?? 0.0).toDouble(),
-        );
+    final fetchedProducts = snap.docs.map((doc) {
+      final data = doc.data();
+
+      // 1) اقرأ الحقل "sizes" من Firestore (قائمة من الكائنات)
+      final rawSizes = data['sizes'] as List<dynamic>? ?? [];
+
+      // 2) حوّل كل عنصر إلى SizeOption
+      final sizeOptions = rawSizes.map((e) {
+        return SizeOption.fromMap(e as Map<String, dynamic>);
       }).toList();
 
-      setState(() {
-        products = fetchedProducts;
-        loading = false;
-      });
-    } catch (e) {
-      print('خطأ في جلب منتجات الصنف: $e');
-      setState(() {
-        loading = false;
-      });
-    }
+      // 3) أنشئ كائن Product ومرّر قائمة الأحجام
+      return Product(
+        id: doc.id,
+        name: data['name'] ?? '',
+        price: (data['price'] ?? 0.0).toDouble(),
+        discount: (data['discount'] ?? 0.0).toDouble(),
+        sizes: sizeOptions, // <-- هنا نمرر القائمة المحوّلة
+        imageUrl: data['imageURL'] ?? '',
+        category: data['categoryId'] ?? '',
+        description: data['description'] ?? '',
+        images: data['images'] == null
+            ? []
+            : List<String>.from(data['images']),
+        oldPrice: (data['oldPrice'] ?? 0.0).toDouble(),
+        isAvailable: data['isAvailable'] ?? true,
+        quantity: data['quantity'] ?? 0
+      );
+    }).toList();
+
+    setState(() {
+      products = fetchedProducts;
+      loading = false;
+    });
+  } catch (e) {
+    print('خطأ في جلب منتجات الصنف: $e');
+    setState(() {
+      loading = false;
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {

@@ -55,7 +55,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           // خلفية متدرجة لإضفاء جمالية
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepOrangeAccent.shade100, Colors.white],
+              colors: [Colors.deepOrange.shade300, Colors.white],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),

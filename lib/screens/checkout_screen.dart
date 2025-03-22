@@ -155,13 +155,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('إتمام الطلب'),
-          backgroundColor: Colors.deepOrangeAccent.shade100,
+          backgroundColor: Colors.deepOrange.shade300,
         ),
         body: Theme(
           // لتخصيص شكل الـStepper بشكل أجمل
           data: Theme.of(context).copyWith(
             colorScheme: Theme.of(context).colorScheme.copyWith(
-                  primary: Colors.deepOrange, // لون مؤشرات الخطوات
+                  primary: Colors.deepOrange.shade500, // لون مؤشرات الخطوات
                 ),
           ),
           child: Stepper(
@@ -178,7 +178,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   ElevatedButton(
                     onPressed: details.onStepContinue,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepOrange,
+                      backgroundColor: Colors.deepOrange.shade500,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 24, vertical: 12),
@@ -190,7 +190,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     OutlinedButton(
                       onPressed: details.onStepCancel,
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: Colors.deepOrange,
+                        foregroundColor: Colors.deepOrange.shade300,
                         side: const BorderSide(color: Colors.deepOrange),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 24, vertical: 12),
@@ -298,7 +298,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
-        prefixIcon: Icon(icon, color: Colors.deepOrange),
+        prefixIcon: Icon(icon, color: Colors.deepOrange.shade300),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
         ),

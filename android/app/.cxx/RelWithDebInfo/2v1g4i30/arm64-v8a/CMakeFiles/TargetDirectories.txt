@@ -1,0 +1,2 @@
+C:/TechnoCore_template/technocore_template_v1/android/app/.cxx/RelWithDebInfo/2v1g4i30/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/TechnoCore_template/technocore_template_v1/android/app/.cxx/RelWithDebInfo/2v1g4i30/arm64-v8a/CMakeFiles/rebuild_cache.dir

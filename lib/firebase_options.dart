@@ -41,49 +41,54 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDz2bTEw6xg7mqttJLSEG0_tLRdGmPTlnc',
-    appId: '1:145092540242:web:b4abb6bf6a9194210e6c8b',
-    messagingSenderId: '145092540242',
-    projectId: 'aloraapp-9020e',
-    authDomain: 'aloraapp-9020e.firebaseapp.com',
-    storageBucket: 'aloraapp-9020e.firebasestorage.app',
-    measurementId: 'G-CXSW3FTPEX',
+    apiKey: 'AIzaSyBEeCCyKp6F0B0Go8-mgQGhNS7bcrnV2uo',
+    appId: '1:957710516702:web:9137d0f18122a9a8419d4f',
+    messagingSenderId: '957710516702',
+    projectId: 'technocore-75dfc',
+    authDomain: 'technocore-75dfc.firebaseapp.com',
+    databaseURL: 'https://technocore-75dfc-default-rtdb.firebaseio.com',
+    storageBucket: 'technocore-75dfc.firebasestorage.app',
+    measurementId: 'G-MS8HHBZMZ5',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAXsFSyZiVHSJccaaFrIaJYOcwMmjymD7M',
-    appId: '1:145092540242:android:fd88367cfa4954d10e6c8b',
-    messagingSenderId: '145092540242',
-    projectId: 'aloraapp-9020e',
-    storageBucket: 'aloraapp-9020e.firebasestorage.app',
+    apiKey: 'AIzaSyB1fkcObCFqyFNzUoYRh2UdVPyQJfJNb8E',
+    appId: '1:957710516702:android:55fed96479173842419d4f',
+    messagingSenderId: '957710516702',
+    projectId: 'technocore-75dfc',
+    databaseURL: 'https://technocore-75dfc-default-rtdb.firebaseio.com',
+    storageBucket: 'technocore-75dfc.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBsAHE_l2p0L9SrxAoU4wlpR8hl7qJe-B8',
-    appId: '1:145092540242:ios:9d5ec630486732fc0e6c8b',
-    messagingSenderId: '145092540242',
-    projectId: 'aloraapp-9020e',
-    storageBucket: 'aloraapp-9020e.firebasestorage.app',
-    iosBundleId: 'com.example.aloraapp',
+    apiKey: 'AIzaSyD0I8_OA6zzhqMD-SjOP0av9jQfzeQiRtI',
+    appId: '1:957710516702:ios:9b74ed292ffb7f43419d4f',
+    messagingSenderId: '957710516702',
+    projectId: 'technocore-75dfc',
+    databaseURL: 'https://technocore-75dfc-default-rtdb.firebaseio.com',
+    storageBucket: 'technocore-75dfc.firebasestorage.app',
+    iosBundleId: 'com.technocore.shamapp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBsAHE_l2p0L9SrxAoU4wlpR8hl7qJe-B8',
-    appId: '1:145092540242:ios:9d5ec630486732fc0e6c8b',
-    messagingSenderId: '145092540242',
-    projectId: 'aloraapp-9020e',
-    storageBucket: 'aloraapp-9020e.firebasestorage.app',
-    iosBundleId: 'com.example.aloraapp',
+    apiKey: 'AIzaSyD0I8_OA6zzhqMD-SjOP0av9jQfzeQiRtI',
+    appId: '1:957710516702:ios:0463d5445ab1662f419d4f',
+    messagingSenderId: '957710516702',
+    projectId: 'technocore-75dfc',
+    databaseURL: 'https://technocore-75dfc-default-rtdb.firebaseio.com',
+    storageBucket: 'technocore-75dfc.firebasestorage.app',
+    iosBundleId: 'com.example.technocoreTemplateV1',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDz2bTEw6xg7mqttJLSEG0_tLRdGmPTlnc',
-    appId: '1:145092540242:web:2ab7d8122979e5fb0e6c8b',
-    messagingSenderId: '145092540242',
-    projectId: 'aloraapp-9020e',
-    authDomain: 'aloraapp-9020e.firebaseapp.com',
-    storageBucket: 'aloraapp-9020e.firebasestorage.app',
-    measurementId: 'G-0TPESMN8DW',
+    apiKey: 'AIzaSyBEeCCyKp6F0B0Go8-mgQGhNS7bcrnV2uo',
+    appId: '1:957710516702:web:173c5e31d48612cd419d4f',
+    messagingSenderId: '957710516702',
+    projectId: 'technocore-75dfc',
+    authDomain: 'technocore-75dfc.firebaseapp.com',
+    databaseURL: 'https://technocore-75dfc-default-rtdb.firebaseio.com',
+    storageBucket: 'technocore-75dfc.firebasestorage.app',
+    measurementId: 'G-W2LRP4H7DP',
   );
 
 }

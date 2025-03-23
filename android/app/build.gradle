@@ -12,12 +12,12 @@ android {
     namespace = "com.example.technocore_template_v1"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
-    aaptOptions {  
-        cruncherEnabled = false  
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    aaptOptions {  
+        cruncherEnabled = false  
     }
 
     kotlinOptions {
